@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("org.springframework.boot") version "2.4.1"
     id("io.spring.dependency-management") version "1.0.10.RELEASE"
-    id("java")
+/*    id("java") */
     kotlin("jvm") version "1.4.21"
     kotlin("plugin.spring") version "1.4.21"
     kotlin("plugin.allopen") version "1.4.21"  //Kotlin has classes and their members as Final. Framework like Spring AOP requires classes to be open
@@ -16,6 +16,11 @@ plugins {
 group "com.pawan.choure"
 version "1.0-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
+java.targetCompatibility = JavaVersion.VERSION_11
+allprojects {
+    // Plugins can go here, example:
+    apply(plugin = "java")
+}
 
 repositories {
     mavenCentral()
@@ -39,6 +44,8 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
     testImplementation("com.ninja-squad:springmockk:1.1.3")
 }
+
+
 
 tasks.withType<KotlinCompile> {
     kotlinOptions {
