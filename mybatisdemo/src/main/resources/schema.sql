@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS CITY (
+    id         INTEGER PRIMARY KEY AUTO_INCREMENT,
+    name      VARCHAR(100) NOT NULL,
+    state      VARCHAR(100) NOT NULL,
+    country      VARCHAR(100) NOT NULL
+);
